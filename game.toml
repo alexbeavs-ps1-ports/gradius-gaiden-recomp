@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Gradius Gaiden"
+id = "SLPM-86042"
+players = 2
+exe = "disc/SLPM_860.42"
+disc = "disc/Gradius Gaiden (Japan) (Rev 1).cue"
+discs = ["disc/Gradius Gaiden (Japan) (Rev 1).cue"]
+disc_serials = ["SLPM-86042"]
+load_address = "0x80010000"
+entry_pc = "0x800635EC"
+text_size = "0x0012A800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Gradius Gaiden (Japan) (Rev 1).bin"
+cue_name = "Gradius Gaiden (Japan) (Rev 1).cue"
+boot_exe = "SLPM_860.42"
+known_sizes = [589716960]
+known_md5 = [
+  "91596ab8e43ba451e337164d4ae4ac76",
+]
+known_sha1 = [
+  "5c4794957782bed1ec79851c3ac40d673495b2be",
+]
+known_crc32 = [
+  "e4a79a20",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5500.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Gradius Gaiden Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "aee7e9229325ba3b71e1ee63f107abd93ad3cc9e02ddbbc974fb4579faf2825a"

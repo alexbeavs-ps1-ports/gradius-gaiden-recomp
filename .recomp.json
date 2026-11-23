@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Gradius Gaiden",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "gradius-gaiden-recomp",
+  "original": {
+    "region": "Japan",
+    "serial": "SLPM-86042"
+  }
+}
